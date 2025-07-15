@@ -52,6 +52,12 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
+				nest: {
+					red: 'hsl(var(--nest-red))',
+					dark: 'hsl(var(--nest-dark))',
+					light: 'hsl(var(--nest-light))',
+					border: 'hsl(var(--nest-border))'
+				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
 					foreground: 'hsl(var(--sidebar-foreground))',
