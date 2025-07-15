@@ -13,8 +13,17 @@ const Navigation = () => {
   ];
 
   return (
-    <nav className="fixed top-0 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 z-50 border-b border-nest-border">
+    <nav className="w-full bg-background border-b border-gray-border z-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Top header with contact info */}
+        <div className="hidden md:flex justify-end items-center py-2 text-sm text-muted-foreground border-b border-gray-border">
+          <div className="flex items-center space-x-6">
+            <span className="flex items-center">📍 123 QuickSale Street Chicago, IL 60606</span>
+            <span className="flex items-center">📞 123-456-7890</span>
+            <span>Login</span>
+          </div>
+        </div>
+        
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
@@ -23,12 +32,15 @@ const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-4">
-              {navItems.map((item) => (
+            <div className="ml-10 flex items-baseline space-x-1">
+              <Button variant="default" className="bg-orange-primary hover:bg-orange-primary/90 text-white">
+                HOME
+              </Button>
+              {navItems.slice(1).map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-foreground hover:text-nest-red px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200"
+                  className="text-foreground hover:text-orange-primary px-4 py-2 text-sm font-medium transition-colors duration-200 uppercase"
                 >
                   {item.label}
                 </a>
@@ -36,10 +48,10 @@ const Navigation = () => {
             </div>
           </div>
 
-          {/* CTA Button */}
+          {/* Search Icon */}
           <div className="hidden md:block">
-            <Button variant="default" className="bg-nest-red hover:bg-nest-red/90">
-              Get Started
+            <Button variant="ghost" size="sm">
+              🔍
             </Button>
           </div>
 
@@ -64,14 +76,14 @@ const Navigation = () => {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="text-foreground hover:text-nest-red block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
+                  className="text-foreground hover:text-orange-primary block px-3 py-2 rounded-md text-base font-medium transition-colors duration-200"
                   onClick={() => setIsMenuOpen(false)}
                 >
                   {item.label}
                 </a>
               ))}
               <div className="pt-4">
-                <Button variant="default" className="w-full bg-nest-red hover:bg-nest-red/90">
+                <Button variant="default" className="w-full bg-orange-primary hover:bg-orange-primary/90">
                   Get Started
                 </Button>
               </div>
